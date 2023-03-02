@@ -16,6 +16,17 @@ app.listen(3000, function() {
   app.post('/quotes', (request, response) => {
     console.log('Hellooooooooooooooooo!')
   })
-  app.post('/quotes', (req, res) => {
+  
+const bodyParser= require('body-parser')
+
+// Make sure you place body-parser before your CRUD handlers!
+app.use(bodyParser.urlencoded({ extended: true }))
+
+// All your handlers here...
+app.get('/', (req, res) => {/*...*/})
+app.post('/quotes', (req, res) => {/*...*/})
+
+app.post('/quotes', (req, res) => {
     console.log(req.body)
   })
+  
