@@ -66,3 +66,4 @@ MongoClient.connect(/* ... */)
       .catch(error => console.error(error))
     // ...
   })
+  app.set('view engine', 'ejs')
