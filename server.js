@@ -57,3 +57,10 @@ MongoClient.connect(/* ... */)
 
     // ...
   })
+  app.post('/quotes', (req, res) => {
+    quotesCollection.insertOne(req.body)
+      .then(result => {
+        console.log(result)
+      })
+      .catch(error => console.error(error))
+  })
