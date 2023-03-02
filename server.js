@@ -31,3 +31,8 @@ app.post('/quotes', (req, res) => {
   })
   
   const MongoClient = require('mongodb').MongoClient
+
+  MongoClient.connect(connectionString, (err, client) => {
+    if (err) return console.error(err)
+    console.log('Connected to Database')
+  })
