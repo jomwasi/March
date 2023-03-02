@@ -30,9 +30,11 @@ app.post('/quotes', (req, res) => {
     console.log(req.body)
   })
   
-  const MongoClient = require('mongodb').MongoClient
+const MongoClient = require('mongodb').MongoClient
 
-  MongoClient.connect(connectionString, (err, client) => {
-    if (err) return console.error(err)
-    console.log('Connected to Database')
-  })
+MongoClient.connect(connectionString, {
+  useUnifiedTopology: true
+}, (err, client) => {
+  if (err) return console.error(err)
+  console.log('Connected to Database')
+})
