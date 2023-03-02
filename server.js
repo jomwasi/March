@@ -16,3 +16,6 @@ app.listen(3000, function() {
   app.post('/quotes', (request, response) => {
     console.log('Hellooooooooooooooooo!')
   })
+  app.post('/quotes', (req, res) => {
+    console.log(req.body)
+  })
