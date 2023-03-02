@@ -1,4 +1,4 @@
-console.log('May Node be with you')
+//console.log('May Node be with you')
 
 const express = require('express');
 const app = express();
@@ -13,6 +13,6 @@ app.listen(3000, function() {
   app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
   })
-  app.post('/quotes', (req, res) => {
+  app.post('/quotes', (request, response) => {
     console.log('Hellooooooooooooooooo!')
   })
