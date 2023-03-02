@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jomwasi/March/issues"
   },
-  "homepage": "https://github.com/jomwasi/March#readme"
+  "homepage": "https://github.com/jomwasi/March#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
