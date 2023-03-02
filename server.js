@@ -38,3 +38,22 @@ MongoClient.connect(connectionString, {
   if (err) return console.error(err)
   console.log('Connected to Database')
 })
+MongoClient.connect(/* ... */)
+  .then(client => {
+    // ...
+    const db = client.db('star-wars-quotes')
+    app.use(/* ... */)
+    app.get(/* ... */)
+    app.post(/* ... */)
+    app.listen(/* ... */)
+  })
+  .catch(console.error)
+
+  MongoClient.connect(/* ... */)
+  .then(client => {
+    // ...
+    const db = client.db('star-wars-quotes')
+    const quotesCollection = db.collection('quotes')
+
+    // ...
+  })
