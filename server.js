@@ -32,12 +32,6 @@ app.post('/quotes', (req, res) => {
   
 const MongoClient = require('mongodb').MongoClient
 
-MongoClient.connect(connectionString, {
-  useUnifiedTopology: true
-}, (err, client) => {
-  if (err) return console.error(err)
-  console.log('Connected to Database')
-})
 MongoClient.connect(/* ... */)
   .then(client => {
     // ...
@@ -63,4 +57,12 @@ MongoClient.connect(/* ... */)
         console.log(result)
       })
       .catch(error => console.error(error))
+  })
+  app.get('/', (req, res) => {
+    db.collection('quotes').find().toArray()
+      .then(results => {
+        console.log(results)
+      })
+      .catch(error => console.error(error))
+    // ...
   })
